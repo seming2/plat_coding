@@ -1,7 +1,24 @@
 $(function(){
+
+
+$(window).scroll(function(){
+  let wH = $(window).scrollTop();
+  let headerF = $('.header_wrap');
+  console.log(wH);
+  if( wH > 0){
+    headerF.addClass('on');
+    // headerF.css({position:'fixed'})
+  }else{
+    headerF.removeClass('on')
+  }
+})
+
+
+
+
     $('header').mouseover(function(){
         $('header').addClass('on')
-        $(this).parent('.header_wrap').addClass('on')
+        // $(this).parent('.header_wrap').addClass('on')
         $(this).find('.logo').addClass('on')
         $(this).find('.lang').addClass('on')
         $(this).find('.text_box').addClass('on')
@@ -80,13 +97,23 @@ let platformBtn = $('.cm_platform .flatform_gnb li');
     let showBox =  formBox.siblings('.con_none')
 
     // formBox.siblings('.con_none').show();
-    console.log(formBox)
+    
 
     return false;
    })
 
 
+   
+$('.flatform_gnb li a').click(function(){
 
+    let linkUrl = $(this).attr('href');
+    $('.con_none').hide()
+    $('.con_none.'+linkUrl).fadeIn();
+    $(this).parent('li').addClass('active').siblings().removeClass('active');
+    console.log(linkUrl);
+
+    return false;
+})
 
 
 

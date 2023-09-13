@@ -6,6 +6,7 @@ fieldset {border:0}
 legend {font-size: 0; color: transparent; text-indent: -9999px; width: 0; height: 0; overflow: hidden; position: absolute; left: -9999px;}
 
 .container{ max-width: 1400px; margin: 0 auto;}
+.container_to{max-width: 1200px; margin: 0 auto;}
 
 ::selection {
     background: #4675ae;
